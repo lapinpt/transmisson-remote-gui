@@ -1,0 +1,40 @@
+name: Windows Portable Zip
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-portable-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Install Lazarus and UPX
+        shell: pwsh
+        run: |
+          choco install lazarus upx -y --no-progress
+
+      - name: Build portable zip
+        shell: pwsh
+        run: .github/build_windows_portable.ps1
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: transgui-windows-portable
+          path: Release\transgui-*.zip
+          if-no-files-found: error
