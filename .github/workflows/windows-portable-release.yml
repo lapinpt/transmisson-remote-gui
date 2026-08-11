@@ -1,0 +1,37 @@
+name: Windows Portable Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: windows-portable-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Install Lazarus and UPX
+        shell: pwsh
+        run: choco install lazarus upx -y --no-progress
+
+      - name: Build portable zip
+        shell: pwsh
+        run: .github/build_windows_portable.ps1
+
+      - name: Publish release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Release/transgui-*.zip
+          fail_on_unmatched_files: true

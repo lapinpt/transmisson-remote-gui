@@ -1,6 +1,6 @@
 # Transmission Remote GUI
 
-[![CI](https://github.com/transmission-remote-gui/transgui/actions/workflows/ci.yml/badge.svg)](https://github.com/transmission-remote-gui/transgui/actions/workflows/ci.yml)
+[![CI](https://github.com/lapinpt/transmisson-remote-gui/actions/workflows/ci.yml/badge.svg)](https://github.com/lapinpt/transmisson-remote-gui/actions/workflows/ci.yml)
 
 ![Screenshot](https://i.imgur.com/XBbF4Vh.png)
 
@@ -46,7 +46,7 @@ Features:
 
 ## Installation
 
-The installers are listed on the GitHub [Releases](https://github.com/transmission-remote-gui/transgui/releases/latest) page, and the installation instructions for different platforms are listed below :arrow_down:
+The installers are listed on the GitHub [Releases](https://github.com/lapinpt/transmisson-remote-gui/releases/latest) page, and the installation instructions for different platforms are listed below :arrow_down:
 
 ### Linux
 
@@ -78,7 +78,7 @@ Build the program by yourself.
 
 - The zip archive release is much smaller than the installer one, which can save you some bandwidth, disk space and time. Simply download and extract the zip archive wherever you want, then run `transgui.exe` directly or create a shortcut to it.
 
-**Note**: If you need SSL/TLS support with a portable release, install the OpenSSL 3.x Light package matching your build architecture from [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html). Alternatively, download the source archive for the [tag matching your release](https://github.com/transmission-remote-gui/transgui/tags), then copy the project's OpenSSL DLLs from `setup/win/openssl` for 32-bit or `setup/win_amd64/openssl` for 64-bit into the same folder as `transgui.exe`. If Windows reports that `MSVCR120.dll` is missing, install the Microsoft Visual C++ 2013 Redistributable; if `VCRUNTIME140.dll` is missing, install the latest v14 Redistributable. Download the package matching your build architecture from [Microsoft's supported Visual C++ Redistributable downloads](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist). Do not mix files from different releases or architectures.
+**Note**: If you need SSL/TLS support with a portable release, install the OpenSSL 3.x Light package matching your build architecture from [Shining Light Productions](https://slproweb.com/products/Win32OpenSSL.html). Alternatively, download the source archive for the [tag matching your release](https://github.com/lapinpt/transmisson-remote-gui/tags), then copy the project's OpenSSL DLLs from `setup/win/openssl` for 32-bit or `setup/win_amd64/openssl` for 64-bit into the same folder as `transgui.exe`. If Windows reports that `MSVCR120.dll` is missing, install the Microsoft Visual C++ 2013 Redistributable; if `VCRUNTIME140.dll` is missing, install the latest v14 Redistributable. Download the package matching your build architecture from [Microsoft's supported Visual C++ Redistributable downloads](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist). Do not mix files from different releases or architectures.
 
 #### Installer
 
