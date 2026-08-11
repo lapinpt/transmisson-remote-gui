@@ -15,6 +15,7 @@ $zipPath = Join-Path $stageRoot "transgui-$version-$buildTarget.zip"
 Push-Location $repoDir
 try {
     $env:Path = "$LazarusDir;$LazarusDir\fpc\3.2.2\bin\x86_64-win64;$env:Path"
+    $env:LAZARUS_DIR = $LazarusDir
 
     lazbuild -B --lazarusdir="$LazarusDir" transgui.lpi
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
